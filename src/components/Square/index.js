@@ -1,19 +1,30 @@
 import React from 'react';
+import '../../assets/styles/square.css';
 
-const Square = props => {
-  const {
-    value,
-    ...other
-  } = props;
+class Square extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <button
-      className={`square ${value}`}
-      onClick={() => other.onClick()}
-    >
-      {value}
-    </button>
-  );
+    this.state = {
+      value: this.props.value
+    };
+  }
+
+  render() {
+    const {
+      coordinate,
+      handleClick,
+      value
+    } = this.props;
+
+    return (
+      <button
+        className={`square ${value}`}
+        onClick={() => handleClick(coordinate)}
+      />
+    );
+
+  }
 }
 
 export default Square;
