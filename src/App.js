@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/reset.css';
+import './assets/styles/reset.css';
 import Game from './containers/Game';
 
 class App extends Component {

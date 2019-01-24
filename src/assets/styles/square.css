@@ -1,0 +1,19 @@
+.square {
+  border: 2px solid #844D9F;
+  display: inline-block;
+  background: white;
+  margin: 5px;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.x {
+  background-image: url('../images/capybara-x.png');
+  background-size: contain;
+}
+
+.o {
+  background-image: url('../images/capybara-o.png');
+  background-size: contain;
+}

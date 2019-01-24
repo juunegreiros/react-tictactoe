@@ -1,27 +1,33 @@
 import React from 'react';
 import Square from '../Square';
+import '../../assets/styles/board.css';
 
 const Board = props => {
   const {
-    cells,
     squares,
-    ...other
+    handleClick
   } = props;
-  const ArrRows = [0 , 1 , 2];
-  let counter = 1;
+  const rows = [0 , 1 , 2];
 
-  return(
-		<div className="board"> {
-			ArrRows.map(row =>
-				<div key={row.toString()} className="board-row">
-					{
-						cells.slice(row * 3 , counter++ * 3).map((cellID) =>
-							<Square key={cellID.toString()} value={squares[cellID]} onClick={()=>other.onClick(cellID)} />
-						)
-					}
-				</div>
-			)
-		} </div>
+  return (
+		<div className="board">
+      {
+        rows.map(row =>
+          <div key={`${row}`} className="board-row">
+            {
+              rows.map(column =>
+                <Square
+                  key={`${row} ${column}`}
+                  coordinate={`${row} ${column}`}
+                  value={squares[row][column]}
+                  handleClick={handleClick}
+                />
+              )
+            }
+          </div>
+        )
+      }
+    </div>
 	);
 }
 
